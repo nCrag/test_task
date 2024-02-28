@@ -1,0 +1,21 @@
+{
+	"appname": "sshd",
+	"deviceProduct": "CentOS",
+	"deviceVendor": "Linux",
+	"deviceVersion": "",
+	"facility": "authpriv",
+	"hostname": "centos7",
+	"message": "pam_krb5[32621]: authentication fails for 'adm' (adm@localhost): Authentication failure",
+	"object": {
+		"suser": "adm",
+		"suserFullName": "adm@localhost",
+		"type": "user"
+	},
+	"objectAction": "logon",
+	"outcome": "failure",
+	"procid": 32621,
+	"reason": "Authentication failure",
+	"severity": "notice",
+	"text": "Неуспешная аутентификация пользователя по протоколу ssh",
+	"timestamp": "2024-02-25T10:55:58Z"
+}

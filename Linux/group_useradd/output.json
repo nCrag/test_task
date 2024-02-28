@@ -1,0 +1,22 @@
+{
+	"appname": "usermod",
+	"deviceProduct": "CentOS",
+	"deviceVendor": "Linux",
+	"deviceVersion": "",
+	"facility": "authpriv",
+	"hostname": "centos7",
+	"message": "add 'ttest2' to group 'rpc'",
+	"object": {
+		"dgroup": "'rpc'",
+		"duser": "'ttest2'",
+		"type": "group"
+	},
+	"objectAction": "add",
+	"outcome": "success",
+	"procid": 2635,
+	"reason": "",
+	"severity": "info",
+	"subject": "user",
+	"text": "Пользователь добавлен в группу",
+	"timestamp": "2024-02-25T16:17:17Z"
+}

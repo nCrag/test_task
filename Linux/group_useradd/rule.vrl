@@ -1,0 +1,15 @@
+# <86>Feb 25 19:17:17 centos7 usermod[2635]: add 'ttest2' to group 'rpc'
+
+. = parse_syslog!(.message)
+
+.deviceProduct = "CentOS"
+.deviceVendor = "Linux"
+.deviceVersion = "" 
+.text = "Пользователь добавлен в группу"
+
+.objectAction = "add"
+.object = parse_regex!(.message, r'(add) (?<duser>\'\w+\') (to group) (?<dgroup>\'\w+\')')
+.object.type = "group"
+.subject = "user"
+.outcome = "success"
+.reason = ""

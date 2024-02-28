@@ -1,0 +1,15 @@
+# <86>Feb 25 19:15:17 centos7 usermod[2598]: change user 'ek' GID from '500' to '4'
+
+. = parse_syslog!(.message)
+
+.deviceProduct = "CentOS"
+.deviceVendor = "Linux"
+.deviceVersion = "" 
+.text = "У пользователя изменен GID"
+
+.objectAction = "update"
+.object = parse_regex!(.message, r'(change user) (?<uid>\'\w+\') (GID from) (?<cs2>\'\d+\') to (?<groupid>\'\d+\')')
+.object.cs2Label = "original GID"
+.object.type = "user"
+.outcome = "success"
+.reason = ""

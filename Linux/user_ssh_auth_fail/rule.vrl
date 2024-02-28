@@ -1,0 +1,15 @@
+# <85>Feb 25 13:55:58 centos7 sshd[32621]: pam_krb5[32621]: authentication fails for 'adm' (adm@localhost): Authentication failure
+
+. = parse_syslog!(.message)
+
+.deviceProduct = "CentOS"
+.deviceVendor = "Linux"
+.deviceVersion = "" 
+.text = "Неуспешная аутентификация пользователя по протоколу ssh"
+
+.objectAction = "logon"
+.object = parse_regex!(.message, r'authentication fails for \'(?<suser>\w+)\' \((?<suserFullName>\w+@\w+)\): Authentication failure')
+.object.type = "user"
+
+.outcome = "failure"
+.reason = "Authentication failure"

@@ -1,0 +1,13 @@
+# <86>Feb 25 19:18:31 centos7 usermod[2645]: change user name 'test2' to 'ttest2'
+
+. = parse_syslog!(.message)
+
+.deviceProduct = "CentOS"
+.deviceVendor = "Linux"
+.deviceVersion = "" 
+.text = "Изменен пользователь"
+
+.objectAction = "update"
+.object = parse_regex!(.message, r'(change user name) (?<cs1>\'\w+\') (to) (?<duser>\'\w+\')')
+.object.cs1Label = "original user name"
+.outcome = "success"

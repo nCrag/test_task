@@ -1,0 +1,15 @@
+# <38>Feb 25 11:49:12 centos7 sshd[9234]: Received disconnect from 192.168.0.111 port 34728:11: disconnected by user
+
+. = parse_syslog!(.message)
+
+.deviceProduct = "CentOS"
+.deviceVendor = "Linux"
+.deviceVersion = "" 
+.text = "Выход (Logout) пользователя по протоколу ssh"
+
+.objectAction = "logout"
+.object = parse_regex!(.message, r'(Received disconnect from) (?<src>((25[0-5]|(2[0-4]|1\d|[1-9]|)\d)\.?\b){4}) (port) (?<spt>\d+)(:11:) (?<reason>\D+)')
+.object.type = "connection"
+
+.outcome = "success"
+.reason = .object.reason

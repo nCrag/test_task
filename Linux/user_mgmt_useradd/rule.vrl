@@ -1,0 +1,12 @@
+# <86>Feb 25 03:00:01 centos7 useradd[14007]: new user: name=test1, UID=1003, GID=1004, home=/home/test1, shell=/bin/sh
+
+. = parse_syslog!(.message)
+
+.deviceProduct = "CentOS"
+.deviceVendor = "Linux"
+.deviceVersion = "" 
+.name = "Создание пользователя"
+
+.deviceAction = "create"
+.object = parse_regex!(.message, r'(name=)(?<duser>\w+), (UID=)(?<duid>\d+), (GID=)(?<dguid>\d+)')
+.outcome = "success"

@@ -1,0 +1,151 @@
+• Создание, удаление, изменение пользователя
+
+<86>Feb 25 03:00:01 centos7 useradd[14007]: new user: name=test1, UID=1003, GID=1004, home=/home/test1, shell=/bin/sh
+<86>Feb 25 12:40:56 centos7 userdel[21730]: delete user 'test1'
+<86>Feb 25 19:18:31 centos7 usermod[2645]: change user name 'test2' to 'ttest2'
+
+• блокировка/разблокировка пользователя, изменение
+пароля пользователя,.
+
+Feb 25 16:49:25 centos7 usermod[3256]: lock user 'ttest2' password
+Feb 25 16:50:30 centos7 usermod[2556]: unlock user 'ttest2' password
+
+• Создание, удаление, изменение группы пользователей
+
+<134>Feb 25 09:56:44 centos7 audispd: node=centos7 type=ADD_GROUP msg=audit(1446026204.056:543): user pid=1336 uid=0 auid=0 ses=3 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=adding group to /etc/group id=504 exe="/usr/sbin/groupadd" hostname=? addr=? terminal=pts/0 res=success'
+
+• блокировка/разблокировка группы пользователей,
+• Добавление/ удаление пользователя в группу
+
+<86>Feb 25 19:17:17 centos7 usermod[2635]: add 'ttest2' to group 'rpc'
+<86>Feb 25 19:18:31 centos7 usermod[2635]: delete 'ttest2' from group 'rpc'
+
+• Изменение привилегий пользователя/группы пользователей
+
+A user account was changed on host 
+Пользователь с UID изменил настройки учетной записи
+
+<134>Feb 25 10:30:08 centos7 audispd: node=centos7 type=USER_CHAUTHTOK msg=audit(1446028208.085:909): user pid=1497 uid=0 auid=0 ses=3 subj=unconfined_u:unconfined_r:passwd_t:s0-s0:c0.c1023 msg='op=PAM:chauthtok acct="test123" exe="/usr/bin/passwd" hostname=? addr=? terminal=pts/0 res=success'
+<14>Feb 25 11:36:04 centos7 audispd: node=centos7 type=USER_CHAUTHTOK msg=audit(1491802564.860:793): pid=4772 uid=0 auid=1001 ses=2 subj=unconfined_u:unconfined_r:passwd_t:s0-s0:c0.c1023 msg='op=PAM:chauthtok grantors=pam_pwquality,pam_unix acct="mark_hunt" exe="/usr/bin/passwd" hostname=? addr=? terminal=pts/0 res=success'
+
+User change login GID on host 
+Feb 25 19:15:17 centos7 usermod[2598]: change user 'ek' GID from '500' to '4'
+
+• Вход в систему, выход из системы, неуспешный вход в
+систему
+
+User was logged on host with ssh 
+<38>Feb 25 11:46:58 centos7 sshd[32185]: Accepted password for ttest from 192.168.0.111 port 56570 ssh2
+<86>Feb 25 11:37:15 centos7 sshd[447]: Accepted publickey for ttest from 192.168.0.111 port 38496 ssh2: RSA SHA256:1/ohac0qEWmKNeNEzwLljzqoGtH3UalTywhhf5nQTlM
+
+SSH login success 
+<85>Feb 25 18:05:42 centos7 sshd[7777]: pam_krb5[7777]: authentication succeeds for 'user1' (user1@LOCALHOST.RU)
+
+SSH Logout / Disconnect from host 
+<38>Feb 25 11:49:12 centos7 sshd[9234]: Received disconnect from 192.168.0.111 port 34728:11: disconnected by user
+
+===
+User was logged on host with rsh 
+<38>Feb 25 13:57:20 centos7 rshd[5892]: root@192.168.0.1112 as root: cmd='id'
+
+User failed to logon on host with rsh 
+<85>Feb 25 13:58:58 centos7 rshd[5925]: rsh denied to root@192.168.0.111 as ttest: Permission denied.
+<85>Feb 25 13:55:58 centos7 sshd[32621]: pam_krb5[32621]: authentication fails for 'adm' (adm@localhost): Authentication failure
+
+===
+User was logged on host with rlogin 
+Feb 25 14:07:30 centos7 rlogind[6140]: pam_rhosts(rlogin:auth): allowed access to root@192.168.56.152 as root
+
+User failed to logon on host with rlogin 
+Feb 25 14:11:02 centos6 rlogind[6376]: pam_rhosts(rlogin:auth): denied access to root@192.168.56.152 as ekoz2
+
+User failed to logon on host with rlogin 
+Feb 25 14:11:02 centos7 rlogind[6376]: pam_unix(rlogin:auth): authentication failure; logname= uid=0 euid=0 tty=rlogin ruser=root rhost=192.168.56.152 user=ekoz2
+
+===
+User was logged on host with telnet 
+<84>Feb 25 13:14:14 centos7 login: LOGIN ON pts/1 BY ekoz FROM 192.168.56.154
+<84>Feb 25 13:14:14 centos7 login[6393]: invalid password for 'cli'  on '/dev/pts/3'
+Feb 25 14:58:26 centos7 login: pam_unix(remote:auth): authentication failure; logname= uid=0 euid=0 tty=pts/1 ruser= rhost=192.168.56.154 user=ekoz
+
+===
+User failed to logon on host with console
+Feb 25 14:58:28 centos7 login: FAILED LOGIN 1 FROM 192.168.56.154 FOR ttest, Authentication failure
+
+===
+User logout on host 
+Feb 25 14:19:56 centos7 login[7126]: pam_unix(login:session): session closed for user ttest
+
+===
+
+• Успешный переход из УЗ в УЗ/Неуспешный переход из УЗ в
+УЗ
+
+Sudo used for user on host 
+<123>Feb 25 14:56:01 centos7 sudo: pam_unix(sudo:session): session opened for user root by vagrant(uid=0)
+
+User execute command on host with sudo 
+<85>Feb 25 13:05:52 centos7 sudo[311289]:    root : HOST=haproxy-backup ; TTY=pts/0 ; PWD=/root ; USER=root ; COMMAND=/usr/sbin/usermod -aG docker gitlab-runner
+
+Su used fail for user on host 
+Feb 25 06:47:38 centos7 su: pam_unix(su:auth): authentication failure; logname=ttest3 uid=1000 euid=0 tty=pts/3 ruser=ggilev rhost=  user=root
+
+• Попытка аутентификации под несуществующей учетной
+записью
+
+User failed to logon on host with ssh 
+<86>Feb 25 12:24:06 centos7 sshd[2252]: Invalid user BRUTEUSER from 192.168.0.111
+
+• Запуск, остановка, изменение параметров логирования
+
+Feb 28 11:44:00 localhost systemd-journald[510]: Journal stopped
+
+• Чтение, очистка, изменение журналов событий (логов)
+• Изменение конфигурации источника
+
+Feb 25 14:12:18 centos7 audispd: node=centos7 type=SYSCALL msg=audit(1465467138.763:27): arch=c000003e syscall=2 success=yes exit=0 a0=7fff44f38c4e a1=941 a2=1b6 a3=3430f5410c items=1 ppid=2347 pid=2429 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=2 comm="touch" exe="/bin/touch" subj=root:system_r:unconfined_t:s0-s0:c0.c1023 key="fileaud_syslogconf_/etc/syslog.conf"
+
+• События с уровнем Ошибка/Предупреждение/Тревога
+• Выключение/перезапуск источника
+
+Feb 28 11:43:58 localhost systemd[1]: Finished Reboot.
+Feb 28 11:43:58 localhost systemd[1]: Reached target Reboot.
+Feb 28 11:43:58 localhost systemd[1]: Shutting down.
+
+
+• Загрузка пройдена успешно
+• Ошибка при прохождении загрузки
+• Отказ в загрузке
+• Изменение сетевой или аппаратной адресации
+• Установка/удаление ПО/службы
+
+UNIX-like install package rpm 
+Установлен пакет
+<134>Feb 25 08:41:04 centos7 yum[1296]: Installed: libtool-ltdl-2.2.6-15.5.el6.x86_64
+
+UNIX-like update package rpm 
+<123>Feb 25 08:43:42 centos7 yum[1296]: Updated: elfutils-libelf-0.161-3.el6.x86_64
+
+UNIX-like remove package rpm
+Удален пакет
+<123>Feb 25 08:49:32 centos7 yum[4658]: Erased: libtool-ltdl-2.2.6-15.5.el6.x86_64
+
+• Запуск/останов служб
+
+Server/service started (systemd)
+Feb 28 10:44:23 localhost audit[1]: SERVICE_START pid=1 uid=0 auid=4294967295 ses=4294967295 subj=system_u:system_r:init_t:s0 msg='unit=dnf-makecache comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
+Feb 28 10:44:23 localhost audit[1]: SERVICE_STOP pid=1 uid=0 auid=4294967295 ses=4294967295 subj=system_u:system_r:init_t:s0 msg='unit=dnf-makecache comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
+
+
+• Запуск (завершение) программ и процессов (заданий, задач)
+• Аварийное завершение программ и процессов
+• Запрет запуска программы
+• Запрет загрузки библиотеки
+• Системное время установлено/изменено
+• Процесс создал/закрыл/получил доступ к сокету
+• Syscall
+
+Feb 28 10:44:22 localhost audit[255971]: SYSCALL arch=c000003e syscall=1 success=yes exit=1 a0=3 a1=7fffac7a83c0 a2=1 a3=0 items=0 ppid=772 pid=255971 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=106 comm="sshd" exe="/usr/sbin/sshd" subj=system_u:system_r:sshd_t:s0-s0:c0.c1023 key=(null)
+
+===
+

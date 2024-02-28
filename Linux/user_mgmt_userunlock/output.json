@@ -1,0 +1,17 @@
+{
+	"appname": "usermod",
+	"deviceProduct": "CentOS",
+	"deviceVendor": "Linux",
+	"deviceVersion": "",
+	"hostname": "centos7",
+	"message": "unlock user 'ttest2' password",
+	"object": {
+		"duser": "'ttest2'"
+	},
+	"objectAction": "lock",
+	"outcome": "success",
+	"procid": 2556,
+	"reason": "",
+	"text": "Разлокирован пользователь",
+	"timestamp": "2024-02-25T13:50:30Z"
+}

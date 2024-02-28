@@ -1,0 +1,3 @@
+{
+    "message": "<85>Feb 25 13:55:58 centos7 sshd[32621]: pam_krb5[32621]: authentication fails for 'adm' (adm@localhost): Authentication failure"
+}

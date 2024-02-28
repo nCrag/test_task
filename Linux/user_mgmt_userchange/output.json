@@ -1,0 +1,20 @@
+{
+	"appname": "usermod",
+	"deviceProduct": "CentOS",
+	"deviceVendor": "Linux",
+	"deviceVersion": "",
+	"facility": "authpriv",
+	"hostname": "centos7",
+	"message": "change user name 'test2' to 'ttest2'",
+	"object": {
+		"cs1": "'test2'",
+		"cs1Label": "original user name",
+		"duser": "'ttest2'"
+	},
+	"objectAction": "update",
+	"outcome": "success",
+	"procid": 2645,
+	"severity": "info",
+	"text": "Изменен пользователь",
+	"timestamp": "2024-02-25T16:18:31Z"
+}

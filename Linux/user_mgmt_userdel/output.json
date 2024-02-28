@@ -1,0 +1,19 @@
+{
+	"appname": "userdel",
+	"deviceProduct": "CentOS",
+	"deviceVendor": "Linux",
+	"deviceVersion": "",
+	"facility": "authpriv",
+	"hostname": "centos7",
+	"message": "delete user 'test1'",
+	"name": "Удаление пользователя",
+	"object": {
+		"duser": "'test1'"
+	},
+	"objectAction": "delete",
+	"outcome": "success",
+	"procid": 21730,
+	"reason": "",
+	"severity": "info",
+	"timestamp": "2024-02-25T09:40:56Z"
+}

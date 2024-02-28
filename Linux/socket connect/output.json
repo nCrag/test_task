@@ -1,0 +1,19 @@
+{
+	"appname": "journal",
+	"deviceAction": "connect",
+	"deviceProduct": "Debian",
+	"deviceVendor": "Linux",
+	"deviceVersion": "",
+	"facility": "user",
+	"hostname": "a3270l",
+	"message": "Couldn't connect to accessibility bus: Failed to connect to socket /tmp/dbus-ZAv1wbspY8: Connection refused",
+	"name": "Не удалось установить подключение к сокету",
+	"outcome": "failure",
+	"procid": 2546,
+	"reason": "Connection refused",
+	"severity": "warning",
+	"socket": {
+		"path": "/tmp/dbus-ZAv1wbspY8"
+	},
+	"timestamp": "2024-08-29T04:52:13Z"
+}

@@ -1,0 +1,22 @@
+{
+	"appname": "sshd",
+	"deviceProduct": "CentOS",
+	"deviceVendor": "Linux",
+	"deviceVersion": "",
+	"facility": "auth",
+	"hostname": "centos7",
+	"message": "Received disconnect from 192.168.0.111 port 34728:11: disconnected by user",
+	"object": {
+		"reason": "disconnected by user",
+		"spt": "34728",
+		"src": "192.168.0.111",
+		"type": "connection"
+	},
+	"objectAction": "logout",
+	"outcome": "success",
+	"procid": 9234,
+	"reason": "disconnected by user",
+	"severity": "info",
+	"text": "Выход (Logout) пользователя по протоколу ssh",
+	"timestamp": "2024-02-25T08:49:12Z"
+}

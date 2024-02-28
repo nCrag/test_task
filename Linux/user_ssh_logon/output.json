@@ -1,0 +1,24 @@
+{
+	"appname": "sshd",
+	"deviceProduct": "CentOS",
+	"deviceVendor": "Linux",
+	"deviceVersion": "",
+	"facility": "auth",
+	"hostname": "centos7",
+	"message": "Failed password for ttest from 192.168.0.111 port 56570 ssh2",
+	"object": {
+		"duser": "ttest",
+		"protocol": "ssh2",
+		"result": "Failed",
+		"spt": "56570",
+		"src": "192.168.0.111",
+		"type": "user"
+	},
+	"objectAction": "logon",
+	"outcome": "failure",
+	"procid": 32185,
+	"reason": "",
+	"severity": "info",
+	"text": "Вход пользователя по протоколу ssh",
+	"timestamp": "2024-02-25T08:46:58Z"
+}

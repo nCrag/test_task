@@ -1,0 +1,13 @@
+# <86>Feb 25 12:40:56 centos7 userdel[21730]: delete user 'test1'
+
+. = parse_syslog!(.message)
+
+.deviceProduct = "CentOS"
+.deviceVendor = "Linux"
+.deviceVersion = "" 
+.name = "Удаление пользователя"
+
+.objectAction = "delete"
+.object = parse_regex!(.message, r'(delete user) (?<duser>\'\w+\')')
+.outcome = "success"
+.reason = ""

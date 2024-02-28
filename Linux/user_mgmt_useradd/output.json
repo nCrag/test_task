@@ -1,0 +1,20 @@
+{
+	"appname": "useradd",
+	"deviceAction": "create",
+	"deviceProduct": "CentOS",
+	"deviceVendor": "Linux",
+	"deviceVersion": "",
+	"facility": "authpriv",
+	"hostname": "centos7",
+	"message": "new user: name=test1, UID=1003, GID=1004, home=/home/test1, shell=/bin/sh",
+	"name": "Создание пользователя",
+	"object": {
+		"dguid": "1004",
+		"duid": "1003",
+		"duser": "test1"
+	},
+	"outcome": "success",
+	"procid": 14007,
+	"severity": "info",
+	"timestamp": "2024-02-25T00:00:01Z"
+}

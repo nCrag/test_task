@@ -1,0 +1,3 @@
+{
+    "message": "<86>Feb 25 03:00:01 centos7 useradd[14007]: new user: name=test1, UID=1003, GID=1004, home=/home/test1, shell=/bin/sh"
+}

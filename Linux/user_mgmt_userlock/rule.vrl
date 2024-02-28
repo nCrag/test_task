@@ -1,0 +1,13 @@
+# Feb 25 16:49:25 centos7 usermod[3256]: lock user 'ttest2' password
+
+. = parse_syslog!(.message)
+
+.deviceProduct = "CentOS"
+.deviceVendor = "Linux"
+.deviceVersion = "" 
+.text = "Заблокирован пользователь"
+
+.objectAction = "lock"
+.object = parse_regex!(.message, r'(lock user) (?<duser>\'\w+\')')
+.outcome = "success"
+.reason = ""

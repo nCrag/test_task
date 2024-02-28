@@ -1,0 +1,13 @@
+# <12>Aug 29 07:52:13 centos7 journal[2546]: Couldn't connect to accessibility bus: Failed to connect to socket /tmp/dbus-ZAv1wbspY8: Connection refused
+
+. = parse_syslog!(.message)
+
+.deviceProduct = "Centos"
+.deviceVendor = "Linux"
+.deviceVersion = "" 
+.name = "Не удалось установить подключение к сокету"
+
+.deviceAction = "connect"
+.outcome = "failure"
+.socket = parse_regex!(.message, r'(?<path>/[^:]+)')
+.reason = "Connection refused"

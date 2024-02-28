@@ -1,0 +1,23 @@
+{
+	"appname": "usermod",
+	"deviceProduct": "CentOS",
+	"deviceVendor": "Linux",
+	"deviceVersion": "",
+	"facility": "authpriv",
+	"hostname": "centos7",
+	"message": "change user 'ek' GID from '500' to '4'",
+	"object": {
+		"cs2": "'500'",
+		"cs2Label": "original GID",
+		"groupid": "'4'",
+		"type": "user",
+		"uid": "'ek'"
+	},
+	"objectAction": "update",
+	"outcome": "success",
+	"procid": 2598,
+	"reason": "",
+	"severity": "info",
+	"text": "У пользователя изменен GID",
+	"timestamp": "2024-02-25T16:15:17Z"
+}

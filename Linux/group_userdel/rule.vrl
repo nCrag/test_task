@@ -1,0 +1,15 @@
+# <86>Feb 25 19:18:31 centos7 usermod[2635]: delete 'ttest2' from group 'rpc'
+
+. = parse_syslog!(.message)
+
+.deviceProduct = "CentOS"
+.deviceVendor = "Linux"
+.deviceVersion = "" 
+.text = "Пользователь добавлен в группу"
+
+.objectAction = "delete"
+.object = parse_regex!(.message, r'(delete) (?<duser>\'\w+\') (from group) (?<dgroup>\'\w+\')')
+.object.type = "group"
+.subject = "user"
+.outcome = "success"
+.reason = ""

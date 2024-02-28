@@ -1,0 +1,21 @@
+# <38>Feb 25 11:46:58 centos7 sshd[32185]: Accepted password for ttest from 192.168.0.111 port 56570 ssh2
+
+. = parse_syslog!(.message)
+
+.deviceProduct = "CentOS"
+.deviceVendor = "Linux"
+.deviceVersion = "" 
+#.text = "Вход пользователя по протоколу {.object.protocol}" Не успел посмотреть про аналог fstring 
+.text = "Вход пользователя по протоколу ssh"
+
+.objectAction = "logon"
+.object = parse_regex!(.message, r'(?<result>(\w+)) (password for) (?<duser>\w+) (from) (?<src>((25[0-5]|(2[0-4]|1\d|[1-9]|)\d)\.?\b){4}) port (?<spt>\d+) (?<protocol>\w+)')
+.object.type = "user"
+
+if contains(downcase(.message), "accepted") {
+	.outcome = "success"
+} else {
+    .outcome = "failure"
+    }
+
+.reason = ""
